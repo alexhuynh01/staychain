@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login - STAYCHAIN</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      
+        body {
+            background-color: #fff;
+        }
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-form {
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-form h2 {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-control {
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            width: 100%;
+        }
+        .signup-link {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<div class="header-area header-sticky">
+  <div class="main-header ">
+      <div class="container">
+          <div class="row align-items-center">
+              <!-- logo -->
+              <div class="col-xl-2 col-lg-2">
+                  <div class="logo">
+                     <a href="index.html"><img src="assets/img/logo/STAYCHAIN.png" alt=""></a>
+                  </div>
+              </div>
+          <div class="col-xl-8 col-lg-8">
+                  <!-- main-menu -->
+                  <div class="main-menu f-left d-none d-lg-block">
+                      <nav>
+                          <ul id="navigation">
+
+                              <li><a href="index.html">Home-Page</a>                                   
+                              <li><a href="rooms.html">Our-Room</a>                                           
+                               
+                                  
+                          </ul>
+                      </nav>
+                  </div>
+                  <div class="main-menu f-right d-none d-lg-block">
+                      <nav>
+                          <ul id="navigation">                                         
+                              <li><a href="login.html">Log-in/Sign-up</a>    
+                                  
+                          </ul>
+                      </nav>
+                  </div>
+              </div>             
+              <div class="col-xl-2 col-lg-2">
+                  <!-- header-btn -->
+                  <div class="header-btn">
+                      <!-- <a href="#" class="btn btn1 d-none d-lg-block " >Online Booking</a> -->
+                      <a href="payments.html" class="btn btn1 d-none d-lg-block">Book Online</a>
+                  </div>
+              </div>
+              <!-- Mobile Menu -->
+              <div class="col-12">
+                  <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<body>
+
+<div class="login-container">
+    <div class="login-form">
+        <h2>Login</h2>
+        <form action="your_login_endpoint" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <div class="signup-link">
+            Don't have an account? <a href="signup.html">Sign Up</a>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
