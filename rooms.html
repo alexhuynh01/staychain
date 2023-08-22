@@ -35,7 +35,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <strong>Hotel</b>
+                    <strong>STAYCHAIN</b>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
 
                                         <li><a href="index.html">Home-Page</a>                                   
                                         <li><a href="rooms.html">Our-Room</a>                                           
-                                         
+                                            <li><a href="history-pay.html">History-Payment</a>  
                                             
                                     </ul>
                                 </nav>
@@ -317,3 +317,31 @@
         
     </body>
 </html>
+<!-- <script>
+    $.ajax({
+         url: "https://api.shyft.to/sol/v1/wallet/balance?network=devnet&wallet=FJK9dg1pSVMcN4tKqpfZjLM33f8j7uKu2UA768XPLWP",
+         type: "GET",
+         beforeSend: function(xhr){xhr.setRequestHeader('x-api-key', 'DS97HRhXvPEMytKE');},
+         success: function(response) {
+            let data = response.result;
+            console.log(data.balance);
+            $('#balance-sol').text(data.balance);
+            // thuc hien tao qr code khi thanh toan success
+            var qrcode = new QRCode(document.getElementById("qrcode"), {
+                text: "hackthon dau du lieu can luu vao day",
+                width: 128,
+                height: 128,
+                colorDark : "#000000",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+            // write file
+            const fs = require('fs');
+
+            let file = "hackthon dau du lieu can luu vao day."
+            fs.writeFile('data-payment.txt', file, (err) => {
+            if (err) throw err;
+            });
+        }
+      });     
+</script> -->
