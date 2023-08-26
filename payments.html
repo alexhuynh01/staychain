@@ -130,7 +130,8 @@
                             <h3>Payment Information</h3>
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form onsubmit="myFunction()">
+                                
                                 <div class="form-group">
                                     <label for="cardNumber">Card Number</label>
                                     <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
@@ -147,7 +148,8 @@
                                     <label for="nameOnCard">Name on Card</label>
                                     <input type="text" class="form-control" id="nameOnCard" placeholder="Name on card">
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">Pay Now</button>
+                                <button type="submit" class="btn btn-primary btn-block">Pay-Now</button>
+                                <!-- <button onclick="check()">Click me</button> -->
                             </form>
                         </div>
                     </div>
@@ -231,17 +233,22 @@
             </div>
         </div>
         <!-- Footer End-->
-    </footer>
-   
+    </footer>   
 </body>
-      
-
 </html>
 <script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
 <script type="text/javascript" src="assets/js/qrcode.min.js"></script>
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 
 <script>
+       async function myFunction() {
+            if ('phantom' in window) {
+            const provider = window.phantom?.solana;
+            if (provider?.isPhantom) {
+            const res = await provider.connect()
+            }
+        }
+            }
     $.ajax({
          url: "https://api.shyft.to/sol/v1/wallet/balance?network=devnet&wallet=FJK9dg1pSVMcN4tKqpfZjLM33f8j7uKu2UA768XPLWP",
          type: "GET",

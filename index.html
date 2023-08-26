@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-    <head>
-        
+    <head>        
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>STAYCHAIN</title>
@@ -9,7 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="site.webmanifest">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-
 		<!-- CSS here -->
             <link rel="stylesheet" href="assets/css/bootstrap.min.css">
             <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -232,7 +230,7 @@
                    </div>
                     <!-- Single Select Box -->
                     <div class="single-select-box pt-45 mb-30">
-                        <a href="#" class="btn select-btn">Check-Room</a>
+                        <a href="rooms.html" class="btn select-btn">Check-Room</a>
                    </div>
                
 
@@ -456,6 +454,13 @@
         </div>
         <!-- Gallery img End-->
     </main>
+
+
+
+
+
+
+    
    <footer>
        <!-- Footer Start-->
        <div class="footer-area black-bg footer-padding">
@@ -484,10 +489,10 @@
                            <div class="footer-tittle">
                                <h4>Reservations</h4>
                                <ul>
-                                   <li><a href="#">Tel: 123 456 789</a></li>
-                                   <li><a href="#">Facebook: STAYCHAIN</a></li>
-                                   <li><a href="#">Contact: Staychainblog@gmail.com</a></li>
-                               </ul>
+                                <li><a href="#">Tel: 123 456 789</a></li>
+                                <li><a href="#">Facebook: STAYCHAIN</a></li>
+                                <li><a href="#">Contact:Staychainblog@gmail.com</a></li>
+                            </ul>
                            </div>
                        </div>
                    </div>
@@ -564,6 +569,16 @@
         
     </body>
 </html>
+<script>
+    const provider = getProvider(); // see "Detecting the Provider"
+try {
+    const resp = await provider.connect();
+    console.log(resp.publicKey.toString());
+    // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo 
+} catch (err) {
+    // { code: 4001, message: 'User rejected the request.' }
+}
+</script>
 
 <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-latest.pack.js"></script>
 <script type="text/javascript" src="assets/js/qrcode.min.js"></script>
