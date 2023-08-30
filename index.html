@@ -588,7 +588,7 @@ try {
     $.ajax({
          url: "https://api.shyft.to/sol/v1/wallet/balance?network=devnet&wallet=",
          type: "GET",
-         beforeSend: function(xhr){xhr.setRequestHeader('x-api-key', 'DS97HRhXvPEMytKE');},
+         beforeSend: function(xhr){xhr.setRequestHeader('x-api-key', '');},
          success: function(response) {
             let data = response.result;
             console.log(data.balance);
