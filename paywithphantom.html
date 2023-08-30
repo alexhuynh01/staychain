@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment - STAYCHAIN</title>
@@ -17,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+
 </head>
 <body>
     <header>
@@ -24,10 +26,8 @@
             .card {
                 height: 100%;
                 display: flex;
-                flex-direction: column;
-                
+                flex-direction: column;               
             }
-    
             .card-body {
                 flex-grow: 1;
                 display: flex;
@@ -59,9 +59,9 @@
                                 <nav>
                                     <ul id="navigation">
     
-                                        <li><a href="index.html">Home-Page</a>                                   
-                                        <li><a href="rooms.html">Our-Room</a>                                           
-                                        <li><a href="history-pay.html">History-Payment</a>  
+                                        <li><a href="index.html">Home-Page</a>      </li>                             
+                                        <li><a href="rooms.html">Our-Room</a>            </li>                               
+                                        <li><a href="history-pay.html">History-Payment</a>  </li>
                                             
                                     </ul>
                                 </nav>
@@ -91,7 +91,7 @@
             </div>
        </div>
     </header>
-    <main>
+<main>
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-4">
@@ -123,4 +123,41 @@
                 </div>
             </div>
         </div>
+        
     </main>
+
+    <script>
+        const web3 = require('@solana/web3.js');
+const { WalletConnection } = require('@solana/wallet-adapter-base');
+const { PhantomWalletAdapter } = require('@solana/wallet-adapter-phantom');
+
+const connection = new web3.Connection(
+    web3.clusterApiUrl('devnet'), 
+    'confirmed'
+);
+
+const wallet = new WalletConnection(new PhantomWalletAdapter());
+
+async function makePayment() {
+    const recipientPublicKey = new web3.PublicKey('recipient_public_key_here');
+    const amount = web3.LAMPORTS_PER_SOL; 
+
+    const transaction = new web3.Transaction().add(
+        web3.SystemProgram.transfer({
+            fromPubkey: wallet.publicKey,
+            toPubkey: recipientPublicKey,
+            lamports: amount,
+        })
+    );
+
+    const { blockhash } = await connection.getRecentBlockhash();
+    transaction.recentBlockhash = blockhash;
+    transaction.setSigners(wallet.publicKey);
+    wallet.signTransaction(transaction);
+    const txId = await connection.sendTransaction(transaction);
+
+    console.log('Payment sent:', txId);
+}
+
+makePayment();
+    </script>
